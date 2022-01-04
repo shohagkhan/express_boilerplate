@@ -10,11 +10,11 @@ const app = express();
 app.use(express.json());
 
 // Import Routes:
-const postRoutes = require("./routes/postRoutes");
+// const postRoutes = require("./routes/postRoutes");
 
 // Routes: 1.create route-> 2.create controller -> 3.import route -> 4.use route
 
-app.use("/api/v1", postRoutes);
+app.use("/api/v1", require("./routes/postRoutes"));
 
 // Error & Not-Found Url
 app.all("*", notFound);
